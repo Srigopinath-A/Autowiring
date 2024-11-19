@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+
+<!-- every class spring uses is said to be spring bean so we going to use spring stack -->
+<!-- xml - extensible markup language  -->
+
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- bean definitions here -->
+    
+<!--  in order to autowire we need to add auto wire in our bean id junction -->
+<!-- in term of type we cant have same name on both beans and if we are search by type we have to mention primary because both are same type
+ -->
+ 
+ <bean id="Junction" class="com.nospb.Autowiring.Junction" autowire = "byType" >
+<!-- <property  name = "Bus" ref="Kpn" /> --> <!-- this is manual wiring but we need autowiring  -->
+</bean>
+
+<!-- in the spring type is more important than the name, type: "com.nospb.Autowiring.Kpn" -->
+<bean id="bus" class="com.nospb.Autowiring.Kpn" >
+
+</bean>
+
+<bean id="Sundharam" class="com.nospb.Autowiring.Sundharam" primary="true">
+
+</bean>
+
+
+</beans>
